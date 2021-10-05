@@ -1,22 +1,13 @@
 package jackson
 
-import com.fasterxml.jackson.databind.DeserializationFeature
-import com.fasterxml.jackson.module.kotlin.*
 import freemarker.FreemarkerUtils
-import models.Screen
 import java.io.File
 
 class Convert {
-    private val mapper = jacksonObjectMapper()
     private val freemarker = FreemarkerUtils()
-    private val ignoreJson = """{
-    "message": "OK",
-    "application": {
-        "screens": ["""
+    private val convert = ConvertJsonToObject()
 
     fun generateFtlFile() {
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-
         val json = """ 
             
     {
@@ -323,8 +314,8 @@ class Convert {
     }
             
         """.trimIndent()
-        var screen: Screen = mapper.readValue<Screen>(json.replace(ignoreJson, ""))
-
+        val screen = convert.convert(json)
+        println(screen)
         val s: String = freemarker.parseTemplate(screen, "screen.ftl")
         File("src/main/kotlin/templates/output.html").writeText(s)
     }
