@@ -1,7 +1,6 @@
-import freemarker.template.Configuration
-import jackson.Convert
+import freemarker.GenerateTemplateFromObject
 
 fun main(args: Array<String>) {
-   val convert: Convert = Convert()
-    convert.generateFtlFile()
+   val template: GenerateTemplateFromObject = GenerateTemplateFromObject()
+    template.generateFtlFile()
 }

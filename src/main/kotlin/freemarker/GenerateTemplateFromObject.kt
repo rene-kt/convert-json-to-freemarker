@@ -1,9 +1,9 @@
-package jackson
+package freemarker
 
-import freemarker.FreemarkerUtils
+import jackson.ConvertJsonToObject
 import java.io.File
 
-class Convert {
+class GenerateTemplateFromObject {
     private val freemarker = FreemarkerUtils()
     private val convert = ConvertJsonToObject()
 
@@ -315,8 +315,7 @@ class Convert {
             
         """.trimIndent()
         val screen = convert.convert(json)
-        println(screen)
-        val s: String = freemarker.parseTemplate(screen, "screen.ftl")
-        File("src/main/kotlin/templates/output.html").writeText(s)
+        val stringHtml: String = freemarker.parseTemplate(screen, "screen.ftl")
+        File("src/main/kotlin/templates/output.html").writeText(stringHtml)
     }
 }
