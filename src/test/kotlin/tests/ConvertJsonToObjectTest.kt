@@ -1,5 +1,6 @@
 package tests
 
+import freemarker.GenerateTemplateFromObject
 import jackson.ConvertJsonToObject
 import junit.framework.TestCase
 import models.Color
@@ -38,5 +39,7 @@ class ConvertJsonToObjectTest : TestCase() {
         assertEquals(screenExpected.toString(), screen.toString())
 
     }
+
+
 
 }
