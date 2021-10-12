@@ -124,7 +124,7 @@ class GenerateTemplateFromObject {
         """.trimIndent()
 
     /**
-     * Generate the HTML file from given JSON, it'll convert to an object and parse to the template.
+     * Generate the HTML file from given JSON, it'll convert to an [Screen] object and parse to the template.
      *
      * @return returns the stringHtml to debug and testing purposes.
      */
@@ -137,7 +137,7 @@ class GenerateTemplateFromObject {
     }
 
     /**
-     * Generate the HTML file from given object, without the JSON.
+     * Generate the HTML file from given [Screen] object, without the JSON.
      *
      * @return returns the stringHtml to debug and testing purposes.
      */

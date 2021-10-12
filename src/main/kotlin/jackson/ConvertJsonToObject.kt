@@ -12,9 +12,9 @@ class ConvertJsonToObject {
         "screens": ["""
 
     /**
-     * Get a given JSON from KnowCode API and converts to a Screen object
+     * Get a given JSON and converts to a [Screen] object
      *
-     * @param json the JSON from the API.
+     * the param [json] is given from the KnowCode
      */
     fun convert(json: String): Screen {
         return mapper.readValue<Screen>(json.replace(jsonIgnore, ""))

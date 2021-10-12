@@ -4,6 +4,7 @@ import freemarker.template.Configuration
 import freemarker.template.DefaultObjectWrapper
 import freemarker.template.Template
 import freemarker.template.TemplateException
+import models.Screen
 import java.io.File
 import java.io.IOException
 import java.io.StringWriter
@@ -16,13 +17,13 @@ class FreemarkerUtils {
 
 
     /**
-     * This method is responsible to generate the template from any object
+     * This method is responsible to generate the template from a [Screen] object
      *
-     * @param obj the screen object which it's created from the JSON
+     * @param obj the [Screen] object which it's created from the JSON
      * @param templateName the name of the .ftl file
      */
     @Throws(TemplateException::class, IOException::class)
-    fun parseTemplate(obj: Any, templateName: String?): String {
+    fun parseTemplate(obj: Screen, templateName: String?): String {
 
         cfg.setDirectoryForTemplateLoading(File(folder))
         cfg.objectWrapper = DefaultObjectWrapper()
