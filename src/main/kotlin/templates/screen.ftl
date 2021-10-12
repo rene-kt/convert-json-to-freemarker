@@ -21,13 +21,16 @@
     <#if component.type == "EditText">
     <input type="text" class="input" placeholder="${component.label}" style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background: ${component.backgroundColor.hex}; color: ${component.color.hex}; font-size: ${component.font.size}">
     </#if>
-    <#if component.type == "Checkbox">
+    <#if component.type == "CheckBox">
     <input type="checkbox" id="${component.name}" style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background: ${component.backgroundColor.hex}; color: ${component.color.hex}; font-size: ${component.font.size}">
     <label for="${component.name}" style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background: ${component.backgroundColor.hex}; color: ${component.color.hex}; font-size: ${component.font.size}">${component.label}</label>
     </#if>
     <#if component.type = "RadioButton">
     <input type="radio" id="${component.name}" style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background: ${component.backgroundColor.hex}; color: ${component.color.hex}; font-size: ${component.font.size}">
     <label for="${component.name}" style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background: ${component.backgroundColor.hex}; color: ${component.color.hex}; font-size: ${component.font.size}">${component.label}</label>
+    </#if>
+    <#if component.type = "SeekBar">
+    <input type="slider" min="1" max="100" value="1" style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background: ${component.backgroundColor.hex}; color: ${component.color.hex}; font-size: ${component.font.size}" >
     </#if>
 </#list>
 </#if>
