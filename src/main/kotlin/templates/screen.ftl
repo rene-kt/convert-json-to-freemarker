@@ -9,16 +9,18 @@
 
 </head>
 <body style="background: ${backgroundColor.hex}">
+<#if components??>
 <#list components as component>
     <#if component.type == "TextView">
     <h1 style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background-color: ${component.backgroundColor.hex}; font-size: ${component.font.size}; color: ${component.color.hex}">${component.label}</h1>
     </#if>
     <#if component.type == "Button">
-    <button class="btn" style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background-color: ${component.backgroundColor.hex}; font-size: ${component.font.size}">${component.label}</button>
+    <button class="btn" style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background: ${component.color.hex}; font-size: ${component.font.size}">${component.label}</button>
     </#if>
     <#if component.type == "EditText">
     <input type="text" class="input" placeholder="${component.label}" style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background: ${component.backgroundColor.hex}; color: ${component.color.hex}; font-size: ${component.font.size}">
     </#if>
 </#list>
+</#if>
 </body>
 </html>

@@ -10,7 +10,7 @@ class Component {
     var backgroundColor: Color? = Color()
     var backgroundImage: Image? = Image()
     var label: String? = ""
-    var color: Color? = Color()
+    var color: Color? = Color("#fff")
     var font: Font? = Font()
 
 
