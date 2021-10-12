@@ -34,7 +34,7 @@ class ConvertJsonToObjectTest : TestCase() {
                     }
         """.trimIndent()
 
-        val screenExpected: Screen = Screen(1, "test", Size(500, 500), Color("#fff"), Image("test"), true, "Screen", null)
+        val screenExpected: Screen = Screen(1, "test", Size(500, 500), Color("#fff"), true, "Screen", Image("test"), null, null);
         val screen = convert.convert(json)
         assertEquals(screenExpected.toString(), screen.toString())
 

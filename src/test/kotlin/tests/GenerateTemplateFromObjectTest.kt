@@ -58,7 +58,7 @@ class GenerateTemplateFromObjectTest : TestCase() {
     @Test
     fun testGenerateTemplateFromObjectWithoutJson(){
         val generate = GenerateTemplateFromObject()
-        val screen: Screen = Screen(1, "test", Size(500, 500), Color("#fff"), Image("test"), true, "Screen", null)
+        val screen: Screen = Screen(1, "test", Size(500, 500), Color("#fff"), true, "Screen", null, null, null)
         val htmlExpected = "<html>\n" +
                 "<head>\n" +
                 "    <title>test</title>\n" +

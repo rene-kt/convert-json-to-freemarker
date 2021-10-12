@@ -10,20 +10,24 @@ import java.io.StringWriter
 
 
 class FreemarkerUtils {
+
     private val cfg: Configuration = Configuration()
-    private val FOLDER = "src/main/kotlin/templates"
-    
+    private val folder = "src/main/kotlin/templates"
+
+
+    /**
+     * This method is responsible to generate the template from any object
+     *
+     * @param obj the screen object which it's created from the JSON
+     * @param templateName the name of the .ftl file
+     */
     @Throws(TemplateException::class, IOException::class)
     fun parseTemplate(obj: Any, templateName: String?): String {
 
-        //diretório onde estão templates
-        cfg.setDirectoryForTemplateLoading(File(FOLDER))
-        cfg.setObjectWrapper(DefaultObjectWrapper())
-
-        //recupera o template
+        cfg.setDirectoryForTemplateLoading(File(folder))
+        cfg.objectWrapper = DefaultObjectWrapper()
         val t: Template = cfg.getTemplate(templateName)
         val writer = StringWriter()
-        /** Freemarker  */
         t.process(obj, writer)
         writer.flush()
         writer.close()

@@ -123,6 +123,11 @@ class GenerateTemplateFromObject {
 }
         """.trimIndent()
 
+    /**
+     * Generate the HTML file from given JSON, it'll convert to an object and parse to the template.
+     *
+     * @return returns the stringHtml to debug and testing purposes.
+     */
     fun generateFtlFileFromJson(): String {
 
         val screen = convert.convert(this.json)
@@ -131,6 +136,11 @@ class GenerateTemplateFromObject {
         return stringHtml
     }
 
+    /**
+     * Generate the HTML file from given object, without the JSON.
+     *
+     * @return returns the stringHtml to debug and testing purposes.
+     */
     fun generateFtlFileFromObject(screen: Screen): String{
         val stringHtml: String = freemarker.parseTemplate(screen, "screen.ftl")
         File("src/main/kotlin/templates/output.html").writeText(stringHtml)

@@ -13,7 +13,6 @@ class ConvertJsonToObject {
         "screens": ["""
 
     fun convert(json: String): Screen {
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         return mapper.readValue<Screen>(json.replace(jsonIgnore, ""))
     }
 }
