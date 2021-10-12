@@ -1,4 +1,3 @@
-<!--suppress ALL -->
 <html>
 <head>
     <title>${name}</title>
