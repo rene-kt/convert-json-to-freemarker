@@ -1,3 +1,4 @@
+<!--suppress ALL -->
 <html>
 <head>
     <title>${name}</title>
@@ -19,6 +20,14 @@
     </#if>
     <#if component.type == "EditText">
     <input type="text" class="input" placeholder="${component.label}" style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background: ${component.backgroundColor.hex}; color: ${component.color.hex}; font-size: ${component.font.size}">
+    </#if>
+    <#if component.type == "Checkbox">
+    <input type="checkbox" id="${component.name}" style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background: ${component.backgroundColor.hex}; color: ${component.color.hex}; font-size: ${component.font.size}">
+    <label for="${component.name}" style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background: ${component.backgroundColor.hex}; color: ${component.color.hex}; font-size: ${component.font.size}">${component.label}</label>
+    </#if>
+    <#if component.type = "RadioButton">
+    <input type="radio" id="${component.name}" style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background: ${component.backgroundColor.hex}; color: ${component.color.hex}; font-size: ${component.font.size}">
+    <label for="${component.name}" style="width: ${component.size.width}; height: ${component.size.height}; left:${component.location.x}; top:${component.location.y}; background: ${component.backgroundColor.hex}; color: ${component.color.hex}; font-size: ${component.font.size}">${component.label}</label>
     </#if>
 </#list>
 </#if>
